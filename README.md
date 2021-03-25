@@ -17,3 +17,4 @@ as follows:
 NOTE: You must be using Xcode >= 12.2 for the iOS examples to run.
 
 [Jitsi Meet]: https://github.com/jitsi/jitsi-meet
+"# jitsiSDKTest" 
