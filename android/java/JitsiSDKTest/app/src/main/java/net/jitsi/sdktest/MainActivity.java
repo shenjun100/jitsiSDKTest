@@ -52,8 +52,22 @@ public class MainActivity extends AppCompatActivity {
                 // When using JaaS, set the obtained JWT here
                 //.setToken("MyJWT")
                 // Different features flags can be set
-                // .setFeatureFlag("toolbox.enabled", false)
-                // .setFeatureFlag("filmstrip.enabled", false)
+                //.setFeatureFlag("toolbox.enabled", false)
+                .setFeatureFlag("filmstrip.enabled", false)
+                .setFeatureFlag("fullscreen.enabled", false)
+                .setFeatureFlag("add-people.enabled", false)
+                .setFeatureFlag("audio-only.enabled", false)
+                .setFeatureFlag("chat.enabled", false)
+                .setFeatureFlag("invite.enabled", false)
+                .setFeatureFlag("calendar.enabled", false)
+                .setFeatureFlag("help.enabled", false)
+                .setFeatureFlag("raise-hand.enabled", false)
+                .setFeatureFlag("live-streaming.enabled", false)
+                .setFeatureFlag("kick-out.enabled", false)
+                .setFeatureFlag("tile-view.enabled", false)
+                .setFeatureFlag("video-share.enabled", false)
+                .setFeatureFlag("recording.enabled", false)
+                .setFeatureFlag("meeting-password.enabled", false)
                 .setWelcomePageEnabled(false)
                 .build();
         JitsiMeet.setDefaultConferenceOptions(defaultOptions);
