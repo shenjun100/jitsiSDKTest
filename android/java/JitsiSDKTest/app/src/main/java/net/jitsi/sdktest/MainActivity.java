@@ -67,7 +67,10 @@ public class MainActivity extends AppCompatActivity {
                 .setFeatureFlag("tile-view.enabled", false)
                 .setFeatureFlag("video-share.enabled", false)
                 .setFeatureFlag("recording.enabled", false)
+                .setFeatureFlag("meeting-name.enabled", false)
                 .setFeatureFlag("meeting-password.enabled", false)
+                .setFeatureFlag("toolbox.alwaysVisible", true)
+                .setFeatureFlag("notifications.enabled", false)
                 .setWelcomePageEnabled(false)
                 .build();
         JitsiMeet.setDefaultConferenceOptions(defaultOptions);
