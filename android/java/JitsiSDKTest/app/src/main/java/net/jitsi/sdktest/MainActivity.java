@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                     = new JitsiMeetConferenceOptions.Builder()
                     .setRoom(text)
                     .setAudioOnly(!switchMedia.isChecked())
+                    .setSubject(" ")
                     // Settings for audio and video
                     //.setAudioMuted(true)
                     //.setVideoMuted(true)
