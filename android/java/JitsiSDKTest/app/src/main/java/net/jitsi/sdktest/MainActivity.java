@@ -37,11 +37,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        EditText editTextURL = findViewById(R.id.serverURL);
+        String serverURLStr = "https://" + editTextURL.getText().toString();
+
         // Initialize default options for Jitsi Meet conferences.
         URL serverURL;
         try {
             // When using JaaS, replace "https://meet.jit.si" with the proper serverURL
-            serverURL = new URL("https://call.phonecrypt.org");
+            //serverURL = new URL("https://call.phonecrypt.org");
+            serverURL = new URL(serverURLStr);
         } catch (MalformedURLException e) {
             e.printStackTrace();
             throw new RuntimeException("Invalid server URL!");
@@ -89,12 +93,23 @@ public class MainActivity extends AppCompatActivity {
         EditText editText = findViewById(R.id.conferenceName);
         Switch switchMedia = findViewById(R.id.switchMedia);
         String text = editText.getText().toString();
+        EditText editTextURL = findViewById(R.id.serverURL);
+        String serverURLStr = "https://" + editTextURL.getText().toString();
+
+        URL serverURL;
+        try {
+            serverURL = new URL(serverURLStr);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Invalid server URL!");
+        }
 
         if (text.length() > 0) {
             // Build options object for joining the conference. The SDK will merge the default
             // one we set earlier and this one when joining.
             JitsiMeetConferenceOptions options
                     = new JitsiMeetConferenceOptions.Builder()
+                    .setServerURL(serverURL)
                     .setRoom(text)
                     .setAudioOnly(!switchMedia.isChecked())
                     .setSubject(" ")

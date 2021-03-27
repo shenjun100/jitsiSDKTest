@@ -76,4 +76,21 @@
         app:layout_constraintBottom_toTopOf="@+id/conferenceName"
         app:layout_constraintStart_toEndOf="@+id/switchMedia" />
 
+    <EditText
+        android:id="@+id/serverURL"
+        android:layout_width="285dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginBottom="14dp"
+        android:contentDescription="Enter server URL..."
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="call.phonecrypt.org"
+        app:layout_constraintBottom_toTopOf="@+id/switchMedia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
