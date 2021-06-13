@@ -1,2 +1,0 @@
-# mavenrepo
-Jitsi Maven Repository
