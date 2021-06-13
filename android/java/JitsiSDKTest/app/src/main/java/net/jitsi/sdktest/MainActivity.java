@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 .setFeatureFlag("filmstrip.enabled", false)
                 .setFeatureFlag("fullscreen.enabled", false)
                 .setFeatureFlag("add-people.enabled", false)
-                .setFeatureFlag("audio-only.enabled", false)
                 .setFeatureFlag("chat.enabled", false)
                 .setFeatureFlag("invite.enabled", false)
                 .setFeatureFlag("calendar.enabled", false)
@@ -68,13 +67,16 @@ public class MainActivity extends AppCompatActivity {
                 .setFeatureFlag("raise-hand.enabled", false)
                 .setFeatureFlag("live-streaming.enabled", false)
                 .setFeatureFlag("kick-out.enabled", false)
-                .setFeatureFlag("tile-view.enabled", false)
+                .setFeatureFlag("tile-view.enabled", true)
                 .setFeatureFlag("video-share.enabled", false)
                 .setFeatureFlag("recording.enabled", false)
                 .setFeatureFlag("meeting-name.enabled", false)
                 .setFeatureFlag("meeting-password.enabled", false)
                 .setFeatureFlag("toolbox.alwaysVisible", true)
                 .setFeatureFlag("notifications.enabled", false)
+                .setFeatureFlag("pip.enabled", false)
+                .setFeatureFlag("audio-mute.enabled", true)
+                .setFeatureFlag("video-mute.enabled", true)
                 .setWelcomePageEnabled(false)
                 .build();
         JitsiMeet.setDefaultConferenceOptions(defaultOptions);
@@ -111,11 +113,11 @@ public class MainActivity extends AppCompatActivity {
                     = new JitsiMeetConferenceOptions.Builder()
                     .setServerURL(serverURL)
                     .setRoom(text)
-                    .setAudioOnly(!switchMedia.isChecked())
+                    //.setAudioOnly(!switchMedia.isChecked())
                     .setSubject(" ")
                     // Settings for audio and video
                     //.setAudioMuted(true)
-                    //.setVideoMuted(true)
+                    .setVideoMuted(!switchMedia.isChecked())
                     .build();
             // Launch the new activity with the given options. The launch() method takes care
             // of creating the required Intent and passing the options.

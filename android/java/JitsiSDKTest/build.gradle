@@ -19,6 +19,7 @@ allprojects {
         maven {
             //url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
             url "https://github.com/shenjun100/mavenrepo/raw/main/releases"
+            //url "../mavenrepo/releases"
         }
         google()
         jcenter()
